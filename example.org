@@ -1,0 +1,12 @@
+*  Example:
+
+# The case of graphite
+Using the case of Homework 4 of the DFT course, the model of the graphite. The k point is (5,5,5) and the encut is 450eV. From the out put file in my SSH accout ‘bulk/Graphite-P5’get the WAVECAR binary file, which conserve the information of the plane wave coefficient at certain spin, k-point.
+Then put the WAVECAR binary file and the WaveTransPlot.f90 source code file in the same folder. Compiled the code using gfortran by typing’ gfortran o WaveTransPlot.f90 Wave’ in ‘cmd’. Then the Wave.exe is created. Execute Wave.exe and get the standard output of the wave function and the GCOEFF.txt of the information about the wave coefficient at different G(reciprocal space vector).
+# Explanation of  WaveTransPlot.f90
+The first paragraph
+WaveTrans works only for an RTAG value of 45200, corresponding to single precision for the plane wave coefficients. If the WAVECAR file has some other RTAG value then an error message results. To obtain a version that works in double precision, simply change the declaration for the 'coeff' array to be complex*16 rather than complex*8, change the statement that checks the RTAG value, and recompile the program.
+Then find the reciprocal properties from a1,a2,a3, get b1,b2,b2 and their magnitude. Then using the reciprocal properties and the wave function coefficient ,we could find the desired wave function  and calculate the plane wave.(See the code)
+# Main result
+Finally, output the G coefficient and output the wave as a function of the z at certain x y, band and wave vector.
+We could see that z from 0-1 and the wave function for the graphite by plotting the output.
