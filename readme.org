@@ -1,8 +1,0 @@
-* readme miniproject-1
-* Problem-4 Plot the WAVECAR file.(Using fortran)
-The Main aim of this project is to get the Wave Function from the WAVECAR binary profile, since in the process of DFT simulation, we need to solve the self-consistent Kohn-Sham equation, by adjusting the basic plane wave coefficient of the initial guess to get the optimized wave function.
-The process of this project including 3 step. The first step is to get the reciprocal properties and output the wave coefficient at each G value(reciprocal space vector). And the second step is to get the wave function by combing the waves in step 1.The third step is to get the plot of the wavefunction.
-The code referred to Professor. Feenstra(http://www.andrew.cmu.edu/user/feenstra/wavetrans/) .The tools to compiled the code source is gfortan.
-There are two kinds of codes using different version of fortran: g77 and g90. The g77 code first get the GCOEFF (wave coefficient of G) and then get the wave function. The g90 code could get the GCOEFF and the wave function simultaneously  and takes only small fraction of CPU of the g77. So I adopt the g90 code.
-The WaveTransPlot.f90 is the main code source in this project, it should be compiled by gfortran or equivalent compilier. This code will output the wave coefficient as a function of G vector  into GCOEFF.txt and standard output the real space wavefunction in a3 direction,  at certain a1,a2, band and wavevector. And the wavevector will be restricted to 1st Brillouin Zone in this code.
-After execute the code, manually copy the standard output to plot, then a picture of the wavefunction will be created. (As shown in the example WaveFunction.png.)
